@@ -1,0 +1,10 @@
+rest:
+  default:
+    baseurl: https://radical.sh/api/
+    timeout: 45000
+app:
+  port: 4000
+db:
+  mongo:
+    database: graphtest
+    host: localhost

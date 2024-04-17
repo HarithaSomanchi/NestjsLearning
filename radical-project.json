@@ -1,0 +1,393 @@
+{
+  "store": {
+    "defaultStorage": {
+      "dataBaseName": "MONGO"
+    }
+  },
+  "inboundevents": {},
+  "outboundevents": {},
+  "channels": {
+    "default": {
+      "channelName": "default",
+      "topicName": "defaultTopic89465",
+      "binderName": "default",
+      "containsMultiSchemaEvents": true
+    }
+  },
+  "binders": {
+    "default": {
+      "type": "kafka",
+      "binderName": "default",
+      "brokers": "localhost:9092"
+    }
+  },
+  "types": {
+    "models": {
+      "Car": {
+        "access": {
+          "level": "public"
+        },
+        "properties": {
+          "name": {
+            "type": "string",
+            "annotations": [
+              {
+                "arguments": [],
+                "references": [],
+                "annotation": "Field",
+                "$ref": "@nestjs/graphql/Field",
+                "argumentType": "POSITIONAL"
+              },
+              {
+                "arguments": [
+                  {
+                    "enumObject": {
+                      "defaultType": "expression"
+                    }
+                  }
+                ],
+                "references": [],
+                "annotation": "ApiProperty",
+                "$ref": "@nestjs/swagger/ApiProperty",
+                "argumentType": "POSITIONAL"
+              }
+            ]
+          },
+          "owner": {
+            "type": "object",
+            "$ref": "https://radical.sh/graphtest/models/owner/Owner",
+            "annotations": [
+              {
+                "arguments": [
+                  {
+                    "value": {
+                      "defaultType": "expression",
+                      "default": "{ each: true }"
+                    }
+                  }
+                ],
+                "references": [],
+                "annotation": "ValidateNested",
+                "$ref": "class-validator/ValidateNested",
+                "argumentType": "POSITIONAL"
+              },
+              {
+                "arguments": [
+                  {
+                    "enumObject": {
+                      "defaultType": "expression",
+                      "default": "()=> Owner"
+                    }
+                  }
+                ],
+                "references": [],
+                "annotation": "Type",
+                "$ref": "class-transformer/Type",
+                "argumentType": "POSITIONAL"
+              },
+              {
+                "arguments": [
+                  {
+                    "type": {
+                      "defaultType": "expression",
+                      "default": "() => Owner"
+                    }
+                  }
+                ],
+                "references": [],
+                "annotation": "Field",
+                "$ref": "@nestjs/graphql/Field",
+                "argumentType": "POSITIONAL"
+              },
+              {
+                "arguments": [
+                  {
+                    "enumObject": {
+                      "defaultType": "expression",
+                      "default": "{type: Owner}"
+                    }
+                  }
+                ],
+                "references": [],
+                "annotation": "ApiProperty",
+                "$ref": "@nestjs/swagger/ApiProperty",
+                "argumentType": "POSITIONAL"
+              }
+            ]
+          },
+          "vehicleType": {
+            "type": "string",
+            "annotations": [
+              {
+                "arguments": [],
+                "references": [],
+                "annotation": "Field",
+                "$ref": "@nestjs/graphql/Field",
+                "argumentType": "POSITIONAL"
+              },
+              {
+                "arguments": [
+                  {
+                    "enumObject": {
+                      "defaultType": "expression"
+                    }
+                  }
+                ],
+                "references": [],
+                "annotation": "ApiProperty",
+                "$ref": "@nestjs/swagger/ApiProperty",
+                "argumentType": "POSITIONAL"
+              }
+            ]
+          },
+          "awards": {
+            "items": {
+              "type": "object",
+              "$ref": "https://radical.sh/graphtest/models/award/Award"
+            },
+            "$ref": "java/util/List",
+            "annotations": [
+              {
+                "arguments": [
+                  {
+                    "value": {
+                      "defaultType": "expression",
+                      "default": "{ each: true }"
+                    }
+                  }
+                ],
+                "references": [],
+                "annotation": "ValidateNested",
+                "$ref": "class-validator/ValidateNested",
+                "argumentType": "POSITIONAL"
+              },
+              {
+                "arguments": [
+                  {
+                    "enumObject": {
+                      "defaultType": "expression",
+                      "default": "()=> Award"
+                    }
+                  }
+                ],
+                "references": [],
+                "annotation": "Type",
+                "$ref": "class-transformer/Type",
+                "argumentType": "POSITIONAL"
+              },
+              {
+                "arguments": [
+                  {
+                    "type": {
+                      "defaultType": "expression",
+                      "default": "() => [Award]"
+                    }
+                  }
+                ],
+                "references": [],
+                "annotation": "Field",
+                "$ref": "@nestjs/graphql/Field",
+                "argumentType": "POSITIONAL"
+              },
+              {
+                "arguments": [
+                  {
+                    "enumObject": {
+                      "defaultType": "expression",
+                      "default": "{type: Award, isArray: true}"
+                    }
+                  }
+                ],
+                "references": [],
+                "annotation": "ApiProperty",
+                "$ref": "@nestjs/swagger/ApiProperty",
+                "argumentType": "POSITIONAL"
+              }
+            ]
+          },
+          "carId": {
+            "type": "string",
+            "annotations": []
+          }
+        },
+        "required": [],
+        "$id": "https://radical.sh/graphtest/models/car/Car",
+        "title": "Car",
+        "key": "carId"
+      },
+      "Owner": {
+        "access": {
+          "level": "public"
+        },
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "ownerId": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "$id": "https://radical.sh/graphtest/models/owner/Owner",
+        "title": "Owner",
+        "key": "ownerId"
+      },
+      "Award": {
+        "access": {
+          "level": "public"
+        },
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "year": {
+            "type": "string"
+          },
+          "awardId": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "$id": "https://radical.sh/graphtest/models/award/Award",
+        "title": "Award",
+        "key": "awardId"
+      }
+    },
+    "enums": {}
+  },
+  "project": {
+    "logger": {
+      "appenderConfig": {
+        "consoleAppender": {
+          "enabled": true
+        },
+        "fileAppender": {
+          "enabled": true
+        }
+      }
+    },
+    "health": {
+      "dependenciesHealthEnabled": true,
+      "enabled": true
+    },
+    "unitTests": {
+      "enabled": false
+    },
+    "version": {
+      "node": "20.3.1"
+    },
+    "swagger": {
+      "enabled": true
+    },
+    "path": "/v1/",
+    "groupName": "sh.radical",
+    "build": {
+      "tool": "gradle"
+    },
+    "packageName": "sh.radical.graphtest",
+    "folderName": "graphtest",
+    "projectName": "graphtest",
+    "graphql": {
+      "enabled": true
+    },
+    "authentication": {
+      "authSchemetype": [
+        "No Auth"
+      ],
+      "authParms": {
+        "jwtAuthParams": {
+          "userId": "",
+          "issuerURL": "https://example.com/",
+          "jwtModel": ""
+        }
+      },
+      "enabled": false
+    }
+  },
+  "action": {
+    "models": {
+      "Car": {
+        "actions": {
+          "Select": {
+            "apiEnabled": false,
+            "actionType": "sync",
+            "path": "",
+            "httpVerb": "Get",
+            "parameters": {
+              "selectQueryParameters": {
+                "sortFields": [],
+                "filters": {}
+              }
+            },
+            "enabled": false,
+            "isAuthEnabled": false
+          },
+          "Delete": {
+            "apiEnabled": true,
+            "actionType": "sync",
+            "path": "/{carId}",
+            "httpVerb": "Delete",
+            "parameters": {},
+            "enabled": true,
+            "isAuthEnabled": false
+          },
+          "Update": {
+            "apiEnabled": true,
+            "actionType": "sync",
+            "path": "/{carId}",
+            "httpVerb": "Put",
+            "parameters": {},
+            "enabled": true,
+            "isAuthEnabled": false,
+            "redirectAction": "Get"
+          },
+          "Create": {
+            "apiEnabled": true,
+            "actionType": "sync",
+            "httpVerb": "Post",
+            "parameters": {},
+            "enabled": true,
+            "isAuthEnabled": false,
+            "redirectAction": "Get"
+          },
+          "Get": {
+            "apiEnabled": true,
+            "actionType": "sync",
+            "path": "/{carId}",
+            "httpVerb": "Get",
+            "parameters": {},
+            "enabled": true,
+            "isAuthEnabled": false
+          }
+        },
+        "path": "cars"
+      }
+    }
+  },
+  "config": {
+    "customProperties": ""
+  },
+  "integrations": {
+    "rest": {
+      "requestGroups": {
+        "Default": {
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "baseUrl": "https://radical.sh/api/",
+          "timeoutInMilliSeconds": 45000,
+          "authScheme": {
+            "type": "No Auth"
+          }
+        }
+      },
+      "restSettings": {
+        "isRequestBodySelectionAllowedForAllVerbs": false
+      },
+      "requests": {}
+    }
+  },
+  "_persist": {
+    "version": 21
+  }
+}
